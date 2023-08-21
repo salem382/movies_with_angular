@@ -1,0 +1,22 @@
+
+
+<section class="row mt-5">
+    <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <h3>this is movies</h3>
+    </div>
+
+    <div  *ngFor="let movie of moviesArray" [routerLink]="['/movieDetails',movie.id]" class="col-md-3 col-sm-6">
+        <img class="w-100" [src]="imgPrefx+movie.poster_path"/>
+        <h3 class="h6">{{movie.title}}</h3>
+        <p>{{movie.overview | seeMore}}</p>
+    </div>
+</section>
+<section class="row mt-5">
+    <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <h3>this is Tv</h3>
+    </div>
+    <div *ngFor="let movie of tvArray" class="col-md-3 col-sm-6">
+        <img class="w-100" [src]="imgPrefx+movie.poster_path"/>
+        <h3 class="h6">{{movie.name}}</h3>
+    </div>
+</section>

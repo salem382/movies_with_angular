@@ -1,0 +1,24 @@
+<nav aria-label="Page navigation example mt-5">
+    <ul class="pagination w-25 mx-auto">
+      <li *ngFor="let page of paginationArray" (click)="changePage(page)" class="page-item">
+        <a class="page-link">{{page}}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="w-75 mx-auto">
+    <input class="form-control" [(ngModel)]="term"/>
+  </div>
+
+<section *ngIf="!isLoading; else elseBlock" class="row mt-5">
+    <div  *ngFor="let movie of movieData | search:term" [routerLink]="['/movieDetails',movie.id]" class="col-md-3 col-sm-6">
+        <img class="w-100" [src]="imgPrefx+movie.poster_path"/>
+        <h3 class="h6">{{movie.title}}</h3>
+        <p>{{movie.overview | seeMore}}</p>
+    </div>
+</section>
+<ng-template #elseBlock>
+   <h1>Loading ......</h1>
+</ng-template>
+
+

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Noxe</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page" routerLink="movies">movies</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page" routerLink="tvshow">tv Show</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin"  class="nav-link active" aria-current="page" routerLink="people">people</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page" routerLink="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page" routerLink="networks">Networks</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <a class="nav-link mx-2 active p-0 m-0 fs-5" aria-current="page" href="#">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a class="nav-link mx-2 active p-0 m-0 fs-5" aria-current="page" href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a class="nav-link mx-2 active p-0 m-0 fs-5" aria-current="page" href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a class="nav-link mx-2 active p-0 m-0 fs-5" aria-current="page" href="#">
+                <i class="fa-brands fa-soundcloud"></i>
+              </a>
+            </li>
+          </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a *ngIf="!isLogin" class="nav-link active" aria-current="page" routerLink="register">register</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="!isLogin" class="nav-link active" aria-current="page" routerLink="login">login</a>
+          </li>
+          <li class="nav-item" (click)="logOut()">
+            <a *ngIf="isLogin" class="nav-link active" aria-current="page">logOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
